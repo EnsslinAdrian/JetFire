@@ -1,0 +1,112 @@
+.levelScreenContainer {
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    left: -2000px;
+    transition: all 400ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/User Interface/PopupBox.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.showLevelScreen {
+    left: 0;
+}
+
+.firstLevelLineContainer {
+    height: 70%;
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstLineLevel {
+    height: 80%;
+    width: 80%;
+}
+
+.secondLineLevel {
+    height: 70%;
+    width: 90%;
+}
+
+.secondLevelLineContainer {
+    height: 70%;
+    width: 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.levelIcon1 {
+    height: 30%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.levelIcon2 {
+    height: 30%;
+    position: absolute;
+    left: 38%;
+    bottom: 0;
+}
+
+.levelIcon3 {
+    height: 30%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.levelIcon4 {
+    height: 30%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.levelIcon5 {
+    height: 30%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.levelIcon6 {
+    height: 30%;
+    position: absolute;
+    left: 60px;
+    bottom: 0;
+}
+
+.levelIcon1,
+.levelIcon2,
+.levelIcon3,
+.levelIcon4,
+.levelIcon5,
+.levelIcon6 {
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+.levelIcon1:hover,
+.levelIcon2:hover,
+.levelIcon3:hover,
+.levelIcon4:hover,
+.levelIcon5:hover,
+.levelIcon6:hover {
+    transform: scale(110%);
+}
+
+@media only screen and (max-height: 480px) {
+    .levelScreenContainer {
+        height: 90%;
+    }
+
+}

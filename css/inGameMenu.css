@@ -1,0 +1,223 @@
+.headerInGameOptions {
+    width: 100%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.optionsInGameScreen {
+    width: 100%;
+    height: 100%;
+    left: -1000px;
+    position: absolute;
+    background-image: url('../img/User Interface/PopupBox.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all 250ms ease-in-out;
+    z-index: 20;
+}
+
+.showOptionsInGameScreen {
+    left: 0;
+}
+
+.optionsInGameButton {
+    height: 100%;
+    margin-right: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.backInGameButton {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.optionsIngameImageButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    transition: all 300ms ease-in-out;
+    
+}
+
+.optionsIngameImageButton img {
+    width: 75%;
+}
+
+.optionsIngameImageButton:hover {
+    transform: scale(110%);
+}
+
+.openOptionsSoundInGameScreen,
+.openOptionsSteeringInGameScreen {
+    width: 100%;
+    height: 80%;
+    left: -1000px;
+    position: absolute;
+    background-image: url('../img/User Interface/PopupBox.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all 250ms ease-in-out;
+    z-index: 50;
+}
+
+.openOptionsImpressumScreen {
+    width: 100%;
+    height: 80%;
+    left: -1000px;
+    position: absolute;
+    background-image: url('../img/User Interface/PopupBox.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 250ms ease-in-out;
+    z-index: 50;
+}
+
+.openOptionsImpressumScreen p {
+    margin-block-start: 0;
+    margin-block-end: 0.5em;
+    font-family: 'Orbitron';
+    font-weight: '600';
+    text-shadow: rgb(201, 200, 199) 1px 0 10px;
+
+}
+
+.openOptionsImpressumScreen span {
+    font-size: 30px;
+    font-weight: '600';
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-shadow: rgb(201, 200, 199) 1px 0 10px;
+    font-family: 'Orbitron';
+}
+
+.showSteering {
+    left: 0;
+}
+
+.steering {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    border: 1px solid black;
+}
+
+.openOptionsSteeringInGameScreen span {
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    border-right: 1px solid black;
+    font-family: 'Orbitron';
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: rgb(173, 226, 250) 1px 0 10px;
+}
+
+.soundContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+
+.soundContainer span {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Orbitron';
+}
+
+.soundContainer img {
+    height: 35px;
+}
+
+.soundOnOfContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+}
+
+.soundOnOfContainer img {
+    width: 70px;
+}
+
+.soundOnOfContainer span {
+    font-size: 24px;
+    font-family: 'Orbitron';
+    margin-right: 10px;
+}
+
+.display-flex {
+display: flex;
+align-items: center;
+}
+
+.steeringBg {
+background-color: aliceblue;
+}
+
+@media only screen and (max-height: 480px) {
+    .openOptionsSoundInGameScreen, 
+    .openOptionsSteeringInGameScreen {
+        width: 100%;
+        height: 90%;
+    }
+
+    .optionsInGameScreen {
+        width: 100%;
+        height: 90%;
+    }
+
+    .steering {
+        width: 60%;
+    }
+
+    .soundContainer {
+        width: 50%;
+    }
+    
+    .soundOnOfContainer {
+        width: 50%;
+    }
+
+    .soundOnOfContainer span {
+        font-size: 20px;
+    }
+
+    .openOptionsImpressumScreen p {
+        margin-block-end: 0.5em;
+    }
+    
+    .openOptionsImpressumScreen span {
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

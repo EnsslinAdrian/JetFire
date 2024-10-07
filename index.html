@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/characterScreen.css">
+    <link rel="stylesheet" href="./css/levelScreen.css">
+    <link rel="stylesheet" href="./css/startScreen.css">
+    <link rel="stylesheet" href="./css/options.css">
+    <link rel="stylesheet" href="./css/inGameMenu.css">
+    <link rel="stylesheet" href="./css/loadScreen.css">
+    <link rel="stylesheet" href="./css/mobileSteering.css">
+    <link rel="shortcut icon" href="img/User Interface/prj10.png" type="image/x-icon">
+    <title>Document</title>
+
+    <script src="./classes.js/collision.class.js"></script>
+    <script src="./classes.js/drawable-object.class.js"></script>
+    <script src="./classes.js/movable-object.class.js"></script>
+    <script src="./classes.js/keyboard.class.js"></script>
+    <script src="./classes.js/statusbar.class.js"></script>
+    <script src="./classes.js/character/character.class.js"></script>
+    <!-- Bilder  -->
+    <script src="./game.js/character_images.js"></script>
+    <script src="./game.js/endboss_images.js"></script>
+    <!-- Hintergund Scripte -->
+    <script src="./classes.js/objects/background.class.js"></script>
+    <script src="./classes.js/objects/floating-platform.class.js"></script>
+    <script src="./classes.js/objects/platforms.class.js"></script>
+    <script src="./classes.js/objects/water.class.js"></script>
+    <script src="./classes.js/objects/tree.class.js"></script>
+    <script src="./classes.js/character/smoke.class.js"></script>
+    <script src="./classes.js/objects/wall.class.js"></script>
+    <script src="./classes.js/objects/spikes.class.js"></script>
+    <!-- Items Scripte -->
+    <script src="./classes.js/character/projectile.class.js"></script>
+    <script src="./classes.js/items/coins.class.js"></script>
+    <script src="./classes.js/items/ammo.class.js"></script>
+    <script src="./classes.js/items/fuel.class.js"></script>
+    <script src="./classes.js/items/heals.class.js"></script>
+    <script src="./classes.js/items/star.class.js"></script>
+    <!-- Gegner Scripte -->
+    <script src="./classes.js/enemies/flyEnemy.class.js"></script>
+    <script src="./classes.js/enemies/shootEnemy.class.js"></script>
+    <script src="./classes.js/enemies/projectilEnemy.class.js"></script>
+    <!-- Endboss Scripte -->
+    <script src="./classes.js/endboss/endboss.class.js"></script>
+    <!-- Level Scripte -->
+    <script src="./classes.js/levels.class.js"></script>
+    <script src="./level.js/level1.js"></script>
+    <script src="./level.js/level2.js"></script>
+    <script src="./level.js/level3.js"></script>
+    <script src="./level.js/level4.js"></script>
+    <script src="./level.js/level5.js"></script>
+    <script src="./level.js/level6.js"></script>
+    <!-- world -->
+    <script src="./classes.js/world.class.js"></script>
+    <!-- Startscreen Scripte  -->
+    <script src="./startScreen.js/characters_object.js"></script>
+    <script src="./startScreen.js/character_selection.js"></script>
+    <script src="./startScreen.js/levels_selection.js"></script>
+    <script src="./startScreen.js/options.js"></script>
+    <script src="./startScreen.js/options_inGame.js"></script>
+    <script src="./game.js/music_player.js"></script>
+
+    <script src="./game.js/script.js"></script>
+</head>
+
+<body class="prevent-selec" onload="information()">
+
+    <h1>Jet Fire</h1>
+
+    <!-- startScreenStart -->
+    <section id="startScreen" class="startScreen">
+        <img id="titleImage" class="titleImage" src="./img/User Interface/Tittle.png">
+
+        <!-- header -->
+        <section class="headerOptions">
+            <div class="coinsContainer">
+                <img class="coinImageMenu" src="./img/User Interface/StoreBtn.png">
+                <div class="coinNumberContainer">
+                    <img class="coinImageNumberMenu" src="img/User Interface/emptyForm.png">
+                    <h4 id="coins"></h4>
+                </div>
+                <div class="musicRadioContainer">
+                    <img onclick="stopMusic()" class="musicImageMenuIcon" id="stopMusikImage"
+                        src="./img/User Interface/SoundON.png">
+                    <div class="musicContainer">
+                        <img class="musicImageMenu" src="img/User Interface/emptyForm.png">
+                        <h4 style="margin-left: 10px;" id="soundName"></h4>
+                        <button onclick="nextMusic()" class="nextSound">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="optionsCointainer">
+                <img class="optionsButton" src="img/User Interface/MenuBtn.png" onclick="openOptionMenu()">
+            </div>
+        </section>
+        <!-- header -->
+
+        <!-- startScreen  -->
+        <section class="startButtonContainer" id="startButtonContainer">
+            <div onclick="initLevel1()" id="startButton" class="startImageButton">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Play</h3>
+            </div>
+
+            <div onclick="openLevelsMenu()" id="startButton" class="startImageButton">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Levels</h3>
+            </div>
+
+            <div onclick="openCharacterMenu()" id="startButton" class="startImageButton">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Character</h3>
+            </div>
+        </section>
+        <!-- startScreen  -->
+
+
+        <!-- LevelScreen -->
+        <section class="levelScreenContainer" id="levelScreen">
+            <img onclick="closeLevelsMenu()" class="backButton" src="img/User Interface/CloseBtn.png">
+            <div class="firstLevelLineContainer">
+                <img class="firstLineLevel" src="img/User Interface/line3.png">
+
+                <img onclick="initLevel1()" class="levelIcon1" id="levelIcon1" src="img/User Interface/0Star.png">
+                <img onclick="initLevel2()" class="levelIcon2" id="levelIcon2" src="img/User Interface/LockStage.png">
+                <img onclick="initLevel3()" class="levelIcon3" id="levelIcon3" src="img/User Interface/LockStage.png">
+            </div>
+
+            <div class="secondLevelLineContainer">
+                <img class="secondLineLevel" src="img/User Interface/line2.png">
+                <img onclick="initLevel4()" class="levelIcon4" id="levelIcon4" src="img/User Interface/LockStage.png">
+                <img onclick="initLevel5()" class="levelIcon5" id="levelIcon5" src="img/User Interface/LockStage.png">
+                <img onclick="initLevel6()" class="levelIcon6" id="levelIcon6" src="img/User Interface/LockStage.png">
+            </div>
+        </section>
+        <!-- LevelScreen -->
+
+        <!-- CharacterScreen -->
+        <section class="characterScreenContainer" id="characterScreen">
+            <img onclick="closeCharacterMenu()" class="backButton" src="img/User Interface/CloseBtn.png">
+            <div class="coinsBuyNumberContainer">
+                <img class="coinImageCharacterPrice" src="img/User Interface/emptyForm.png">
+                <h5 id="characterCoinsPrice"></h5>
+            </div>
+
+            <div class="aktivateCharacterContainer">
+                <img onclick="arrowLeft()" class="arrowImageLeft" src="img/User Interface/LeftArrow.png">
+                <div class="characterContainer" id="characterImages">
+                </div>
+                <img onclick="arrowRight()" class="arrowImageRight" src="img/User Interface/RightArrow.png">
+            </div>
+            <span id="checkMoneyForBuy" class="checkMoneyForBuy d-none">Nicht genug Coins!</span>
+            <div id="aktivateOrBuy"></div>
+        </section>
+        <!-- CharacterScreen -->
+
+        <!-- optionsSection -->
+        <section class="optionsSection" id="optionsSection">
+            <img onclick="closeOptionMenu()" class="backButton" src="img/User Interface/CloseBtn.png">
+
+            <div id="" class="optionsIngameImageButton" onclick="openSteering()">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Steering</h3>
+            </div>
+
+            <div id="" class="optionsIngameImageButton" onclick="openSound()">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Sound</h3>
+            </div>
+
+            <div id="" class="optionsIngameImageButton" onclick="openLegalNotice()">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Impressum</h3>
+            </div>
+
+        </section>
+        <!-- optionsSection -->
+
+        <!-- openOptionsSteering -->
+        <div class="openOptionsSteeringInGameScreen " id="openOptionsSteeringScreen">
+            <img onclick="closeSteering()" class="backInGameButton" src="img/User Interface/CloseBtn.png">
+
+            <div class="steering"><span class="steeringBg">Space</span><span>Springen</span></div>
+            <div class="steering"><span class="steeringBg">◀</span><span>Links laufen</span></div>
+            <div class="steering"><span class="steeringBg">▶</span><span>Rechts laufen</span></div>
+            <div class="steering"><span class="steeringBg">▲</span><span>Fliegen</span></div>
+            <div class="steering"><span class="steeringBg">F</span><span>Schießen</span></div>
+        </div>
+        <!-- openOptionsSteering -->
+
+        <!-- openOptionsSound -->
+        <div class="openOptionsSoundInGameScreen " id="openOptionsSoundScreen">
+            <img onclick="closeSound()" class="backInGameButton" src="img/User Interface/CloseBtn.png">
+
+            <div class="soundContainer">
+                <span>Music</span>
+                <div class="display-flex">
+                    <img onclick="musicQuieter()" src="./img/Gui/38.png">
+                    <div><img id="musicVolumeImages" src="./img/Gui/40.png" alt=""></div>
+                    <img onclick="musicLouder()" src="./img/Gui/39.png">
+                </div>
+            </div>
+
+            <div class="soundOnOfContainer">
+                <div class="display-flex">
+                    <span>Music</span>
+                    <img onclick="stopMusic()" id="stopMusicImageOption" src="./img/Gui/33.png">
+                </div>
+            </div>
+
+        </div>
+        <!-- openOptionsSound -->
+
+        <!-- openOptionsImpressum -->
+        <div class="openOptionsImpressumScreen" id="openOptionsImpressumScreen">
+            <img onclick="closeLegalNotice()" class="backInGameButton" src="img/User Interface/CloseBtn.png">
+            <span>Impressum</span>
+            <p>Adrian Enßlin</p>
+            <p>Schweizerhof 2</p>
+            <p>86609 Donauwörth</p>
+            <span>Kontakt</span>
+            <p>Telefon: 015128809396</p>
+            <p>Email: ensslin_adrian.web.de</p>
+        </div>
+        <!-- openOptionsImpressum -->
+
+    </section>
+    <!-- startScreenEnd -->
+
+    <!-- inGameScreenStart -->
+    <div class="content d-none" id="canvasContainer">
+        <section class="headerInGameOptions">
+            <img class="optionsInGameButton" src="img/User Interface/MenuBtn.png" onclick="openInGameOptionMenu()">
+        </section>
+
+        <!-- optionsInGameScreen -->
+        <div class="optionsInGameScreen" id="optionsInGameScreen">
+            <img onclick="closeInGameMenu()" class="backInGameButton" src="img/User Interface/CloseBtn.png">
+
+            <div id="" class="optionsIngameImageButton" onclick="openInGameSteering()">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Steering</h3>
+            </div>
+
+            <div id="" class="optionsIngameImageButton" onclick="openInGameSound()">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Sound</h3>
+            </div>
+
+            <div id="" class="optionsIngameImageButton" onclick="restartLevel()">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Restart</h3>
+            </div>
+
+            <div id="" class="optionsIngameImageButton" onclick="mainMenu()">
+                <img src="./img/User Interface/btn02.png">
+                <h3>Menu</h3>
+            </div>
+        </div>
+        <!-- optionsInGameScreen -->
+
+        <!-- openOptionsSteeringInGameScreen -->
+        <div class="openOptionsSteeringInGameScreen " id="openOptionsSteeringInGameScreen">
+            <img onclick="closeInGameSteering()" class="backInGameButton" src="img/User Interface/CloseBtn.png">
+
+            <div class="steering"><span class="steeringBg">Space</span><span>Springen</span></div>
+            <div class="steering"><span class="steeringBg">◀</span><span>Links laufen</span></div>
+            <div class="steering"><span class="steeringBg">▶</span><span>Rechts laufen</span></div>
+            <div class="steering"><span class="steeringBg">▲</span><span>Fliegen</span></div>
+            <div class="steering"><span class="steeringBg">F</span><span>Schießen</span></div>
+        </div>
+        <!-- openOptionsSteeringInGameScreen -->
+
+        <!-- openOptionsSoundInGameScreen -->
+        <div class="openOptionsSoundInGameScreen " id="openOptionsSoundInGameScreen">
+            <img onclick="closeInGameSound()" class="backInGameButton" src="img/User Interface/CloseBtn.png">
+
+            <div class="soundContainer">
+                <span>Music</span>
+                <div class="display-flex">
+                    <img onclick="musicQuieterInGame()" src="./img/Gui/38.png">
+                    <div><img id="musicVolumeImagesInGame" src="./img/Gui/40.png" alt=""></div>
+                    <img onclick="musicLouderInGame()" src="./img/Gui/39.png">
+                </div>
+            </div>
+
+            <div class="soundContainer">
+                <span>Sound</span>
+                <div class="display-flex">
+                    <img onclick="soundQuieter()" src="./img/Gui/38.png">
+                    <div><img id="soundVolumeImages" src="./img/Gui/40.png" alt=""></div>
+                    <img onclick="soundLouder()" src="./img/Gui/39.png">
+                </div>
+            </div>
+
+            <div class="soundOnOfContainer">
+                <div class="display-flex">
+                    <span>Music</span>
+                    <img onclick="stopMusic()" id="stopMusicImageOptionInGame" src="./img/Gui/33.png" alt="">
+                </div>
+
+                <div class="display-flex">
+                    <span>Sound</span>
+                    <img src="./img/Gui/33.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- openOptionsSoundInGameScreen -->
+
+        <!-- mobileSteering -->
+        <section class="mobileSteering prevent-select" id="mobilSteering">
+            <button id="btLeft" class="mobileSteeringButton btLeft prevent-select">◀</button>
+            <button id="btRight" class="mobileSteeringButton btRight prevent-select">▶</button>
+            <button id="btFly" class="mobileSteeringButton btFly prevent-select">Fly</button>
+            <button id="btJump" class="mobileSteeringButton btJump prevent-select">Jump</button>
+            <button id="btShoot" class="mobileSteeringButton btShoot prevent-select">Shoot</button>
+        </section>
+        <!-- mobileSteering -->
+
+        <!-- loadScreen -->
+        <!-- <section class="loadScreen" id="loadScreen">
+            <img class="loadScreenTitelImages" src="./img/User Interface/Tittle.png">
+
+            <div class="loadBarContainer">
+                <div class="loadBar" style="width: 5%;" id="loadBar">
+                    <p class="loadBarText" id="loadBarText">5%</p>
+                    <img class="loadBarImage" src="./img/User Interface/Loadbar02.png">
+                </div>
+            </div>
+        </section> -->
+        <!-- loadScreen -->
+
+        <!-- gameOver -->
+        <section id="gameOver" class="gameOver d-none">
+            <h2>GAME OVER</h2>
+
+            <div class="gameOverOptionsContainer">
+                <div id="" class="optionsIngameImageButton" onclick="restartLevel()">
+                    <img src="./img/User Interface/btn02.png">
+                    <h3>Restart</h3>
+                </div>
+
+                <div id="" class="optionsIngameImageButton" onclick="mainMenu()">
+                    <img src="./img/User Interface/btn02.png">
+                    <h3>Menu</h3>
+                </div>
+            </div>
+        </section>
+        <!-- gameOver -->
+
+        <!-- winGame -->
+        <section id="winGame" class="winGame d-none">
+            <h2>Gewonnen</h2>
+
+            <div class="showItemsCrowd" id="showItemsCrowd">
+                <div class="itemsContainer">
+                    <img src="./img/Items Sprite/Coins/1.png">
+                    <p id="coinsCrowd">0</p>
+                </div>
+
+                <div class="itemsContainer">
+                    <img src="./img/User Interface/stageAvailable.png">
+                </div>
+
+                <div class="itemsContainer">
+                    <img src="./img/Items Sprite/star_1.png">
+                    <p id="starsCrowd">0</p>
+                </div>
+            </div>
+
+            <div class="winGameOptionsContainer">
+                <div id="" class="optionsIngameImageButton" onclick="mainMenu()">
+                    <img src="./img/User Interface/btn02.png">
+                    <h3>Menu</h3>
+                </div>
+            </div>
+        </section>
+        <!-- winGame -->
+
+        <canvas id="canvas" width="1000" height="600"></canvas>
+    </div>
+    <!-- inGameScreenEnd -->
+
+    <section class="turnMobile"></section>
+
+
+</body>
+
+</html>

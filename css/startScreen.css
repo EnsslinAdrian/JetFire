@@ -1,0 +1,206 @@
+.headerOptions {
+    width: 1000px;
+    height: 10%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+
+.coinsContainer {
+    display: flex;
+}
+
+.coinImageMenu {
+    width: 45px;
+    height: 45px;
+    margin-left: 5px;
+}
+
+.coinNumberContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    height: 42px;
+}
+
+.coinsBuyNumberContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+    height: 42px;
+}
+
+.musicContainer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 3px;
+    height: 42px;
+}
+
+.musicImageMenu {
+    width: 300px;
+    height: 100%;
+}
+
+.musicImageMenuIcon {
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.nextSound {
+    width: 45px;
+    height: 100%;
+    border: 0;
+    background-color: rgb(230, 230, 20);
+    border-radius: 0 10px 10px 0;
+    font-family: 'Orbitron';
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    outline: inherit;
+}
+
+.nextSound:hover {
+    width: 65px;
+    letter-spacing: 5px;
+}
+
+.coinImageNumberMenu {
+    width: 100px;
+    height: 100%;
+}
+
+.optionsCointainer {
+    height: 45px;
+    margin-right: 10px;
+}
+
+.optionsButton {
+    height: 90%;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.optionsButton:hover {
+    transform: scale(110%);
+}
+
+.startScreen {
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url('../img/User Interface/bg02.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.titleImage {
+    width: 60%;
+    transition: all 500ms ease-in-out;
+}
+
+.startButtonContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 500ms ease-in-out;
+}
+
+.startImageButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    transition: all 300ms ease-in-out;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.startImageButton img {
+    width: 100%;
+}
+
+.startImageButton:hover {
+    transform: scale(110%);
+}
+
+.musicRadioContainer {
+    display: flex;
+}
+
+@media only screen and (max-width: 1010px) {
+    .startScreen {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .headerOptions {
+        width: 100%;
+        height: 10%;
+        margin-top: 10px;
+        align-items: start;
+    }
+
+    .musicImageMenu {
+        width: 200px;
+        height: 30px;
+    }
+
+    .optionsButton {
+        margin-left: 0;
+        margin-right: 10px;
+        height: 30px;
+    }
+
+    .coinNumberContainer {
+        margin-bottom: 3px;
+        height: 30px;
+    }
+
+    .musicContainer {
+        margin-bottom: 3px;
+        height: 30px;
+    }
+
+    .musicImageMenuIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .coinImageMenu {
+        width: 30px;
+        height: 30px;
+    }
+
+    .coinImageNumberMenu {
+        width: 70px;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    .startImageButton {
+        width: 180px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}

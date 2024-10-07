@@ -1,0 +1,295 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('img/User Interface/bg01.png');
+    background-position: center;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.moveScreenRight {
+    margin-right: 1000px;
+}
+
+.moveScreenLeft {
+    margin-left: 1000px;
+}
+
+h1 {
+    margin-bottom: 5%;
+    font-size: 40px;
+    letter-spacing: 10px;
+    font-family: 'Orbitron';
+}
+
+h2 {
+    font-size: 80px;
+    letter-spacing: 15px;
+    font-family: 'Orbitron';
+    text-shadow: #FC0 1px 0 10px;
+    margin-block-end: 0.5em;
+    margin-block-start: 0;
+}
+
+h3 {
+    position: absolute;
+    font-size: 16px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-family: 'Orbitron';
+}
+
+h4 {
+    color: rgb(100, 94, 11);
+    font-size: 30px;
+    position: absolute;
+    font-family: 'Orbitron';
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h5 {
+    color: rgb(100, 94, 11);
+    font-size: 24px;
+    position: absolute;
+    font-family: 'Orbitron';
+}
+
+h6 {
+    font-size: 24px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: 'Orbitron';
+}
+
+.span {
+    font-weight: '600';
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-shadow: rgb(201, 200, 199) 1px 0 10px;
+    font-family: 'Orbitron';
+}
+
+.backButton {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.backButton:hover {
+    transform: scale(110%);
+}
+
+.content {
+    width: 1000px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameOver {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/User Interface/boxStat.png');
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 30%;
+    width: 80%;
+}
+
+.gameOverOptionsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.winGame {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/User Interface/boxStat.png');
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 30%;
+    width: 80%;
+}
+
+.winGameOptionsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.showItemsCrowd {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+.itemsContainer {
+    display: flex;
+    align-items: center;
+}
+
+.itemsContainer img {
+    width: 50px;
+}
+
+.itemsContainer p {
+    font-size: 24px;
+    font-family: 'Orbitron';
+}
+
+.prevent-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+
+@media only screen and (max-width: 1010px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    canvas {
+        width: 100%;
+    }
+
+    body {
+        background-size: cover;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 540px) {
+    .turnMobile {
+        background-image: url('./img/Gui/mobile_rotate.webp');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 820px) and (max-width: 820px) and (min-height: 1180px) and (max-height: 1180px) {
+    .turnMobile {
+        background-image: url('./img/Gui/mobile_rotate.webp');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1024px) and (max-height: 1024px) {
+    .turnMobile {
+        background-image: url('./img/Gui/mobile_rotate.webp');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1025px) and (min-height: 1366px) and (max-height: 1367px) {
+    .turnMobile {
+        background-image: url('./img/Gui/mobile_rotate.webp');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    h1 {
+        display: none;
+    }
+
+    canvas {
+        height: 100%;
+    }
+
+    body {
+        background-size: cover;
+    }
+
+    .content {
+        height: 100%;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 40px;
+        letter-spacing: 15px;
+    }
+
+}
+
+@media only screen and (max-height: 920px) {
+    .backButton {
+        height: 40px;
+        width: 40px;
+        right: 20px;
+        top: 25px;
+    }
+
+    h1 {
+        margin-bottom: 1%;
+    }
+
+}

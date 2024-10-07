@@ -1,0 +1,118 @@
+.characterScreenContainer {
+    height: 70%;
+    width: 1000px;
+    position: absolute;
+    left: -1000px;
+    transition: all 400ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url('../img/User Interface/PopupBox.png');
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.aktivateCharacterContainer {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.characterContainer {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrowImageLeft {
+    width: 50px;
+    height: 80px;
+    margin-right: 50px;
+    transition: all 200ms ease-in-out;
+}
+
+.arrowImageRight {
+    width: 50px;
+    height: 80px;
+    margin-left: 50px;
+    transition: all 200ms ease-in-out;
+}
+
+.arrowImageLeft:hover,
+.arrowImageRight:hover {
+    transform: scale(110%);
+    cursor: pointer;
+}
+
+.buyCharacterButton {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    border-radius: 10px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    box-shadow: -3px 5px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.coinImageCharacterPrice {
+    width: 115px;
+    border-radius: 10px;
+}
+
+.showCharacterScreen {
+    left: 0;
+}
+
+.aktivCharacterButton {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: greenyellow;
+    border-radius: 10px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    box-shadow: -3px 5px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.aktivateCharacterButton {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/User Interface/emptyForm.png');
+    border-radius: 10px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    box-shadow: -3px 5px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.buyCharacterButton:hover,
+.aktivCharacterButton:hover {
+transform: scale(110%);
+}
+
+.checkMoneyForBuy {
+color: red;
+letter-spacing: 5px;
+font-family: 'Orbitron';
+
+}
+
+@media only screen and (max-height: 480px) {
+    .characterScreenContainer {
+        height: 90%;
+        width: 100%;
+    }
+
+}
